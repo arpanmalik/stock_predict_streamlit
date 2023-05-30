@@ -91,6 +91,7 @@ data_train_arr = scaler.fit_transform(data_train)
 
 
 model = load_model('keras_model (2).h5')
+#model2 = load_model('saved_model.pb')
 past_100_days = data_train.tail(100)
 final_df = pd.concat([past_100_days, data_test], ignore_index=True)
 
