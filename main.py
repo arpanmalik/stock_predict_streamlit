@@ -23,30 +23,43 @@ if user_input == 'apple' or user_input == 'AAPL':
   path = 'stock.csv.csv'
 
 
-if user_input == 'INFY' or user_input=='infosys':
+elif user_input == 'INFY' or user_input=='infosys':
   path = 'stock3.csv'
 
 
-if user_input == "TSLA" or user_input=="tesla":
+elif user_input == "TSLA" or user_input=="tesla":
   path = 'stock2.csv'
 
-if user_input == "WIT" or user_input=='wipro':
+elif user_input == "WIT" or user_input=='wipro':
   path = 'stock4.csv'
 
-if user_input == "google":
+elif user_input == "google":
   path = 'stock5.csv'
 
 
-if user_input == 'amazon' or user_input=='AMZN':
+elif user_input == 'amazon' or user_input=='AMZN':
   path = 'stock6.csv'
 
 
-if user_input == 'microsoft' or user_input=='MSFT':
+elif user_input == 'microsoft' or user_input=='MSFT':
   path = 'stock7.csv'
 
 
-if user_input == 'UBER' or user_input=='uber':
+elif user_input == 'UBER' or user_input=='uber':
   path = 'stock8.csv'
+
+elif user_input == 'LMT' or user_input == 'lockheed martin':
+  path = 'stock9.csv'
+
+elif user_input == 'META' or user_input == 'meta':
+  path = 'stock10.csv'
+
+elif user_input == 'PEP' or user_input == 'pepsico':
+  path = 'stock11.csv'
+
+else:
+  st.write("Sorry ! we are unable to find the data nad prediction for provided symbol......")
+  st.write("Here is the data for default apple stock")
 
 df = pd.read_csv(path, low_memory=False)
 st.subheader("Data from 2010-01-01 to 2019-12-31")
@@ -58,21 +71,21 @@ fig = plt.figure(figsize=(12,6))
 plt.plot(df.close)
 st.pyplot(fig)
 
-st.subheader("CLosing Price vs Time CHart & 100 Days Moving Average")
+st.subheader("CLosing Price vs Time Chart & 100 Days Moving Average")
 ma200 = df.close.rolling(200).mean()
 fig = plt.figure(figsize=(12,6))
 plt.plot(ma100)
 plt.plot(df.close)
 st.pyplot(fig)
 
-st.subheader("CLosing Price vs Time CHart & 200 Days Moving Average")
+st.subheader("CLosing Price vs Time Chart & 200 Days Moving Average")
 ma200 = df.close.rolling(200).mean()
 fig = plt.figure(figsize=(12,6))
 plt.plot(ma200)
 plt.plot(df.close)
 st.pyplot(fig)
 
-st.subheader("CLosing Price vs Time CHart & moving 100 days vs moving 200 days")
+st.subheader("CLosing Price vs Time Chart & moving 100 days vs moving 200 days")
 st.write("Green Colour for 100 moving days Average")
 st.write("Red colour for 200 moving days Average")
 ma100 = df.close.rolling(100).mean()
@@ -175,7 +188,12 @@ plt.ylabel("Price")
 plt.legend()
 st.pyplot(figi)
 
-st.write("Model provides the accuracy of 64-71 % for ",user_input," stock,")
+st.write(user_input, "stock trend for last five years ")
+fig = plt.figure(figsize=(12,6))
+plt.plot(df.close,)
+st.pyplot(fig)
+
+#st.write("Model provides the accuracy of 64-71 % for ",user_input," stock,")
 
 
 # model = Sequential()
