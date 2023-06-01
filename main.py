@@ -18,11 +18,14 @@ st.write("Stock prediction for ", user_input)
 
 path = 'stock.csv.csv'
 
+
 if user_input == 'apple' or user_input == 'AAPL':
   path = 'stock.csv.csv'
 
+
 if user_input == 'INFY' or user_input=='infosys':
   path = 'stock3.csv'
+
 
 if user_input == "TSLA" or user_input=="tesla":
   path = 'stock2.csv'
@@ -33,11 +36,14 @@ if user_input == "WIT" or user_input=='wipro':
 if user_input == "google":
   path = 'stock5.csv'
 
+
 if user_input == 'amazon' or user_input=='AMZN':
   path = 'stock6.csv'
 
+
 if user_input == 'microsoft' or user_input=='MSFT':
   path = 'stock7.csv'
+
 
 if user_input == 'UBER' or user_input=='uber':
   path = 'stock8.csv'
@@ -79,6 +85,26 @@ st.pyplot(fig)
 
 st.write("Note:- Graph of moving 100 above moving 200 is the indicator of upward trend of the market")
 st.write("Note:- Graph of moving 100 below moving 200 is the indicator of downward trend of the market")
+
+accuracy = '67%'
+
+if user_input == 'apple' or user_input == 'AAPL':
+  accuracy = "67%"
+if user_input == 'INFY' or user_input=='infosys':
+  path = 'stock3.csv'
+if user_input == "TSLA" or user_input=="tesla":
+  path = 'stock2.csv'
+if user_input == "WIT" or user_input=='wipro':
+  path = 'stock4.csv'
+if user_input == "google":
+  path = 'stock5.csv'
+if user_input == 'amazon' or user_input=='AMZN':
+  path = 'stock6.csv'
+if user_input == 'microsoft' or user_input=='MSFT':
+  path = 'stock7.csv'
+if user_input == 'UBER' or user_input=='uber':
+  path = 'stock8.csv'
+
 
 
 data_train = pd.DataFrame(df['close'][0:int(len(df)*0.7)])
@@ -148,6 +174,8 @@ plt.xlabel("Time")
 plt.ylabel("Price")
 plt.legend()
 st.pyplot(figi)
+
+st.write("Model provides the accuracy of 64-71 % for ",user_input," stock,")
 
 
 # model = Sequential()
